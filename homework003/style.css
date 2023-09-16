@@ -2,7 +2,6 @@ table {
     border-collapse: collapse;
     margin: 0 auto;
 }
-
 td {
     width: 100px;
     height: 100px;
@@ -10,17 +9,14 @@ td {
     vertical-align: middle;
     border: 1px solid black;
 }
-
 .x {
     color: blue;
     font-size: 80px;
 }
-
 .o {
     color: red;
     font-size: 80px;
 }
-
 .win {
     background-color: yellow;
 }
@@ -28,8 +24,9 @@ td {
     display: flex;
     flex-direction: column;
 }
-
 #reset {
     margin: 48px 40%;
     padding: 20px;
+    font-weight: bold;
+    font-size: 25px;
 }
