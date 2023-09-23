@@ -1,0 +1,10 @@
+//rules
+
+sum_for_list([], 0).
+sum_for_list([X|Xs], Sum) :-
+    sum_for_list(Xs, Remain),
+    Sum is X + Remain.
+
+//query
+
+?-sum_list([1,2,3,4,5,6,7,8], Sum)
