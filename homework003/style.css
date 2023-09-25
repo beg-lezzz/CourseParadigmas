@@ -16,6 +16,7 @@ td, tr {
     text-align: center;
     vertical-align: middle;
     border: 1px solid black;
+    cursor: pointer;
 }
 .x {
     color: blue;
@@ -51,6 +52,9 @@ td, tr {
 }
 .green {
     color: darkgreen;
+    font-size: 3.5rem;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 }
 .playground:before {
     content: "";
@@ -85,6 +89,9 @@ td, tr {
     .o {
         font-size: 4rem;
     }
+    .green {
+        font-size: 4rem;
+    }
 }
 
 @media (width > 375px) and (width < 700) {
@@ -92,6 +99,9 @@ td, tr {
         font-size: 3.5rem;
     }
     .o {
+        font-size: 3.5rem;
+    }
+    .green {
         font-size: 3.5rem;
     }
 }
