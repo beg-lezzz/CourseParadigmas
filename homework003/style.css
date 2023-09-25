@@ -1,32 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
 table {
     border-collapse: collapse;
-    margin: 0 auto;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
-td {
-    width: 100px;
-    height: 100px;
+td, tr {
+    min-width: 5rem;
+    height: 5rem;
     text-align: center;
     vertical-align: middle;
     border: 1px solid black;
 }
 .x {
     color: blue;
-    font-size: 80px;
+    font-size: 3.5rem;
+    font-family: "Arial", sans-serif, sans-serif;
+    font-weight: bold;
 }
 .o {
     color: red;
-    font-size: 80px;
+    font-size: 3.5rem;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 }
 .win {
-    background-color: yellow;
+    background-color: #ccc;
 }
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.playground {
+    min-width: 20rem;
+    max-width: 30rem;
+    text-align: center;
+    width: 50%;
+    overflow: hidden; /* clearfix */
+    padding-top: 5rem;
+}
+.green {
+    color: darkgreen;
+}
+.playground:before {
+    content: "";
+    padding-top: 100%;
+    float: left;
+}
+.player-info {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.info {
+    width: 50%;
+    min-width: 20rem;
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 3%;
 }
 #reset {
-    margin: 48px 40%;
     padding: 20px;
     font-weight: bold;
     font-size: 25px;
+    width: 100%;
+}
+
+@media (width > 800px) {
+    .x {
+        font-size: 4.5rem;
+    }
+    .o {
+        font-size: 4.5rem;
+    }
+}
+
+@media (width > 375px) and (width < 700) {
+    .x {
+        font-size: 3.5rem;
+    }
+    .o {
+        font-size: 3.5rem;
+    }
 }

@@ -1,6 +1,8 @@
 let playerSymbol = "X";
 let gameEnded = false;
 let countSteps = 0;
+document.getElementById("player").innerText = `${playerSymbol}`
+document.getElementById("player").classList.add(playerSymbol.toLowerCase())
 // объявляем выигрышные позиции
 let winPos = [
     [1, 2, 3], [4, 5, 6],
@@ -18,14 +20,16 @@ for (let i = 1; i <= 9; i++) {
             if (this.innerHTML === "" && !gameEnded) {
                 this.innerHTML = playerSymbol; // ставим символ на поле
                 this.classList.add(playerSymbol.toLowerCase()); // применяем стиль к ячейке
-
+                document.getElementById("player").classList.remove(playerSymbol.toLowerCase())
                 checkWin();
 
-                console.log(countSteps)
-                console.log(gameEnded)
                 if (!gameEnded && countSteps === 9) {
                     setTimeout(function () {
-                        alert("НИЧЬЯ");
+                        // alert("НИЧЬЯ");
+                        document.getElementById("player").classList.remove(playerSymbol.toLowerCase());
+                        document.getElementById("player").innerText = "ДРУЖБА";
+                        document.getElementById("header").innerText = "Победитель"
+                        document.getElementById("player").classList.add("green");
                     }, 100);
                 } else if (!gameEnded) {
                     if (playerSymbol === "X")
@@ -33,6 +37,8 @@ for (let i = 1; i <= 9; i++) {
                 else
                     playerSymbol = "X"
                 }
+                document.getElementById("player").innerText = `${playerSymbol}`
+                document.getElementById("player").classList.add(playerSymbol.toLowerCase())
             }
         }
     );
@@ -53,7 +59,9 @@ function checkWin() {
             gameEnded = true;
 
             setTimeout(function () {
-                alert(`"${playerSymbol}" ПОБЕДИЛИ`);
+                document.getElementById("player").innerText = `${playerSymbol}`;
+                document.getElementById("header").innerText = "Победитель"
+                document.getElementById("player").classList.add(playerSymbol.toLowerCase());
             }, 100);
         }
     }
@@ -68,8 +76,15 @@ document.getElementById("reset").addEventListener(
             document.getElementById(i.toString()).classList.remove("x");
             document.getElementById(i.toString()).classList.remove("o");
             document.getElementById(i.toString()).classList.remove("win");
+            document.getElementById("player").classList.remove(playerSymbol.toLowerCase())
+            document.getElementById("player").classList.remove("green")
             gameEnded = false;
             countSteps = 0;
+            playerSymbol = "X";
+            gameEnded = false;
+            document.getElementById("header").innerText = "Ходит"
+            document.getElementById("player").innerText = `${playerSymbol}`
+            document.getElementById("player").classList.add(playerSymbol.toLowerCase())
         }
     }
 );
